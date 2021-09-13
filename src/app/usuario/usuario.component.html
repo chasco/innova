@@ -1,0 +1,45 @@
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+ 
+
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar" style="z-index: 7;">
+  <div class="px-3">
+    <img src="" style="height: 95px;width: 250px;">
+  </div>
+
+  <p class="text-gray font-weight-bold text-uppercase px-3 small pb-4 mb-0">Prueba Técnica</p>
+
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a [routerLink]="['nueva-solicitud']" [routerLinkActive]="['active']" class="nav-link">Usuarios</a>      
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" (click)="logOut()">Cerrar Sesion</a>
+    </li>
+  </ul>
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="page-content p-5" id="content">
+  <!-- Toggle button -->
+  <nav class="navbar fixed-top navbar-light bg-light" style="z-index: 5;">
+    <img src="" style="height: 78px;
+                width: 250px;">
+    <button 
+      id="sidebarCollapse" 
+      (click)="toggle()" 
+      type="button" 
+      class="btn btn-light bg-white rounded-pill shadow-sm px-3 mb-3" 
+      style="position: fixed;top: 8px;left: 282px;">
+        <i class="fa fa-bars mr-2"></i>
+    </button>
+    <a class="nav-link">Usuario<span class="sr-only"></span></a>
+  </nav>
+  
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
